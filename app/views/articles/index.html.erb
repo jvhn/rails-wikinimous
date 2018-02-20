@@ -1,0 +1,14 @@
+<%= link_to 'Wikinimous', "/articles" %>
+
+<ul>
+  <div class="article">
+    <% @articles.each do |article|%>
+      <li>
+        <a href="/articles/<%= article.id.to_s %>">
+          <h2><%= article.title %></h2>
+        </a>
+        <p><%= article.content %></p>
+      </li>
+    <% end %>
+  </div>
+</ul>

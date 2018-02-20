@@ -1,0 +1,19 @@
+<%= link_to 'Wikinimous', "/articles" %>
+
+
+<h1>Editing article</h1>
+
+<div class="container">
+  <form method="post" action="/articles/<%= @article.id.to_s %>">
+    <div class="form-group">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" class="form-control" name="title" value="<%= @article.title %>">
+    </div>
+    <div class="form-group">
+      <textarea data-editor="markdown" rows="10" class="form-control" name="content" id="article_content" ><%= @article.content %></textarea>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Edit Article">
+  </form>
+</div>
+
+<%= link_to 'Back', "/articles" %>

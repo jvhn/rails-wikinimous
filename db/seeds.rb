@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+array = []
+
+10.times {
+  title = Faker::StarWars.character
+  content = Faker::StarWars.quote
+
+  array << [title, content]
+}
+
+array.each do |title, content|
+  Article.create(title: title, content: content)
+end
+
